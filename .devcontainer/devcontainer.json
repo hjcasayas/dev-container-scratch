@@ -1,0 +1,32 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+  "name": "Scratch Dev Container",
+  "dockerComposeFile": "docker-compose.yaml",
+  "service": "scratch",
+  "workspaceFolder": "/workspaces/scratch",
+  "mounts": [
+    {
+      "source": "${localEnv:HOME}/.ssh",
+      "target": "/home/node/.ssh",
+      "type": "bind"
+    }
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "rvest.vs-code-prettier-eslint",
+        "christian-kohler.path-intellisense",
+        "humao.rest-client",
+        "ms-azuretools.vscode-docker",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "bradlc.vscode-tailwindcss",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "postCreateCommand": "sudo chown node .pnpm-store && sudo chmod +x ./.devcontainer/install.sh && ./.devcontainer/install.sh"
+}
