@@ -5,6 +5,9 @@
   "dockerComposeFile": "docker-compose.yaml",
   "service": "scratch",
   "workspaceFolder": "/workspaces/scratch",
+  "features": {
+    "ghcr.io/devcontainers/features/rust:1": {}
+  },
   "mounts": [
     {
       "source": "${localEnv:HOME}/.ssh",
